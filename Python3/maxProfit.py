@@ -19,8 +19,8 @@ class Solution:
         minP = prices[0]
         maxProfit = 0
 
-        for price in range(1, len(prices)):
-            maxProfit = max(maxProfit, prices[price] - minP)
-            minP = min(minP, prices[price])
+        for p in range(1, len(prices)):
+            maxProfit = max(maxProfit, prices[p] - minP)
+            minP = min(minP, prices[p])
 
         return maxProfit

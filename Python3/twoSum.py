@@ -10,12 +10,12 @@ class Solution:
         numMap = {}
         nList = len(nums)
 
-        for num in range(nList):
-            compliment = target - nums[num]
+        for i in range(nList):
+            compliment = target - nums[i]
 
             if compliment in numMap:
-                return [numMap[compliment], num]
-            numMap[nums[num]] = num
+                return [numMap[compliment], i]
+            numMap[nums[i]] = i
 
         return []
 
@@ -25,8 +25,8 @@ More Solution:
 def twoSum(self, nums: List[int], target: int) -> List[int]:
     numMap = {}
         
-    for i, x in enumerate(nums):
-        if target - x in numMap:
-            return [numMap[target-x], i]           
-        numMap[x] = i
+    for i, num in enumerate(nums):
+        if target - num in numMap:
+            return [numMap[target - num], i]           
+        numMap[num] = i
 '''
