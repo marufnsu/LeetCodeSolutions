@@ -7,6 +7,7 @@ Example 1:
 Input: str1 = "ABCABC", str2 = "ABC"
 Output: "ABC"
 '''
+from math import gcd
 
 class Solution:
     def gcdOfStrings(self, str1: str, str2: str) -> str:

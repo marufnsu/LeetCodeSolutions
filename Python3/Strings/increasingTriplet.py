@@ -14,6 +14,7 @@ Input: nums = [5,4,3,2,1]
 Output: false
 Explanation: No triplet exists.
 '''
+import math
 
 class Solution:
     def increasingTriplet(self, nums: List[int]) -> bool:
