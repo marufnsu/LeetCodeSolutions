@@ -17,19 +17,25 @@ solution(l, k) = [1, 2, 3, 4, 5, 6, 7].
 #
 def solution(l, k):
     # Handle the case where the first node(s) have value k
+    # Skip all nodes at the beginning that have value k
     while l is not None and l.value == k:
         l = l.next
     
-    # If the entire list has value k
+    # If the entire list has value k, return None
     if l is None:
         return None
     
+    # Start from the first node after skipping nodes with value k
     current = l
+    # Iterate through the list
     while current.next is not None:
+        # If the next node has value k, skip it by modifying the next pointer
         if current.next.value == k:
             current.next = current.next.next
+        # Move to the next node
         else:
             current = current.next
+    # Return the updated list
     return l
 
 """

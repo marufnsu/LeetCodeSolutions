@@ -16,9 +16,16 @@ For a = [2, 4, 3, 5, 1], the output should be solution(a) = -1.
 """
 
 def solution(a):
+    # Set to store encountered numbers
     duplicate = set()
+    
+    # Iterate through the array 'a'
     for num in a:
+        # If the number is already in 'duplicate', it's a duplicate, so return it
         if num in duplicate:
             return num
+        # Otherwise, add the number to 'duplicate' set
         duplicate.add(num)
+    
+    # If no duplicates are found, return -1
     return -1

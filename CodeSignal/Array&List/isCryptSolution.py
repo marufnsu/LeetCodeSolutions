@@ -39,20 +39,20 @@ Even though 054 + 091 = 145, 054 and 091 both contain leading zeroes, meaning th
 """
 
 def solution(crypt, solution):
-    # Create a dictionary to map letters to digits
+    # Create a dictionary to map letters to digits based on the solution provided
     mapping = {char: digit for char, digit in solution}
     
-    # Decode the cryptarithm
+    # Decode the cryptarithm using the mapping
     decoded_crypt = []
     for word in crypt:
         decoded_word = ''.join(mapping[char] for char in word)
         decoded_crypt.append(decoded_word)
     
-    # Check for leading zeros
+    # Check for leading zeros in any of the decoded words
     if any(word[0] == '0' and len(word) > 1 for word in decoded_crypt):
         return False
     
-    # Check if the equation holds true
+    # Check if the equation holds true by converting the decoded words to integers and verifying the sum
     return int(decoded_crypt[0]) + int(decoded_crypt[1]) == int(decoded_crypt[2])
 
 """

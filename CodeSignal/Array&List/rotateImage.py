@@ -18,16 +18,17 @@ solution(a) =
 """
 
 def solution(a):
-    n = len(a)
+    n = len(a)  # Get the size of the matrix (assuming it's a square matrix)
     
     # Transpose the matrix
     for i in range(n):
-        for j in range(i, n):
+        for j in range(i, n):  # Iterate over the upper triangular part of the matrix
+            # Swap the elements across the diagonal (i,j) and (j,i)
             a[i][j], a[j][i] = a[j][i], a[i][j]
     
     # Reverse each row
     for i in range(n):
-        a[i].reverse()
+        a[i].reverse()  # Reverse the elements in the i-th row
     return a
 
 """

@@ -13,9 +13,9 @@ solution(l1, l2) = [0, 1, 1, 2, 3, 4, 5].
 
 # Singly-linked lists are already defined with this interface:
 class ListNode(object):
-  def __init__(self, x):
-    self.value = x
-    self.next = None
+    def __init__(self, x):
+        self.value = x
+        self.next = None
 
 def solution(l1, l2):
     # Create a dummy node to serve as the head of the result linked list
@@ -26,11 +26,16 @@ def solution(l1, l2):
     while l1 and l2:
         # Compare the values of the current nodes of both lists
         if l1.value <= l2.value:
+            # If the value of l1 is smaller or equal, append l1 node to the result list
             current.next = l1
+            # Move to the next node in l1
             l1 = l1.next
         else:
+            # If the value of l2 is smaller, append l2 node to the result list
             current.next = l2
+            # Move to the next node in l2
             l2 = l2.next
+        # Move the current pointer to the next node in the result list
         current = current.next
     
     # Append any remaining nodes from l1 or l2
@@ -41,4 +46,3 @@ def solution(l1, l2):
     
     # Return the result linked list, skipping the dummy head
     return dummy_head.next
-

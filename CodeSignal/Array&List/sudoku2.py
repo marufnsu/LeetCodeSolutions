@@ -40,29 +40,29 @@ The given grid is not correct because there are two 1s in the second column. Eac
 def solution(grid):
     # Check rows
     for row in grid:
-        if not is_valid_group(row):
+        if not is_valid_group(row):  # Check if each row is a valid group
             return False
     
     # Check columns
     for col in range(9):
-        column = [grid[row][col] for row in range(9)]
-        if not is_valid_group(column):
+        column = [grid[row][col] for row in range(9)]  # Extract each column
+        if not is_valid_group(column):  # Check if each column is a valid group
             return False
     
     # Check 3x3 subgrids
     for i in range(0, 9, 3):
         for j in range(0, 9, 3):
-            subgrid = [grid[row][col] for row in range(i, i+3) for col in range(j, j+3)]
-            if not is_valid_group(subgrid):
+            subgrid = [grid[row][col] for row in range(i, i+3) for col in range(j, j+3)]  # Extract each 3x3 subgrid
+            if not is_valid_group(subgrid):  # Check if each subgrid is a valid group
                 return False
     
     return True
 
 def is_valid_group(group):
-    seen = set()
+    seen = set()  # Set to keep track of seen numbers
     for num in group:
-        if num != '.':
-            if num in seen:
+        if num != '.':  # Skip empty cells
+            if num in seen:  # If number is already seen in the group, it's invalid
                 return False
-            seen.add(num)
+            seen.add(num)  # Otherwise, add it to the set of seen numbers
     return True
