@@ -1,10 +1,7 @@
 '''
 88. Merge Sorted Array
-Solved
 Easy
-Topics
-Companies
-Hint
+
 You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m and n, 
 representing the number of elements in nums1 and nums2 respectively.
 
@@ -41,3 +38,11 @@ class Solution(object):
                 nums1[k] = nums2[j]
                 j -= 1
             k -= 1
+
+'''
+Alternative Solution:
+def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+    for i in range(n):
+        nums1[m+i] = nums2[i]
+    nums1.sort()
+'''
